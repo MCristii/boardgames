@@ -7,10 +7,11 @@
 <body>
 <table>
 
-    <th>NUME</th> <th>TELEFON</th> <th>EMAIL</th>
+    <th>NUME</th> <th>TELEFON</th> <th>EMAIL</th> <th>DELETE</th>
     {% for person in persons %}
-    <tr> <td>{{person.nume}}</td> <td>{{person.phonenumber}}</td> <td>{{person.mail}}</td> </tr>
+    <tr> <td>{{person.nume}}</td> <td>{{person.phonenumber}}</td> <td>{{person.mail}}</td> <td><a href="deleteperson/{{person.id}}">Delete</a></td> </tr>
     {% endfor %}
+
 
 </table>
 </body>
