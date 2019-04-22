@@ -10,8 +10,10 @@ def formular(request):
 def formular_submit(request):
     return render(request, "main/raspunsformular.html",{'nume':request.POST['nume'],'prenume':request.POST['prenume'],'trimite':request.POST['trimite']})
 # Create your views here.
+
 from .models import Person
 from .forms import PersonForm
+
 def person(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
@@ -29,3 +31,11 @@ def person(request):
         form = PersonForm()
 
     return render(request, 'main/contact_form.html', {'form': form})
+
+from main.models import Person
+
+def persons(request):
+    persons = Person.objects.all()
+
+    return render(request, 'main/persons.html', {'persons': persons})
+
